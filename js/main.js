@@ -8,13 +8,21 @@ const bikes = [
   { nome: "Cannondale SuperSix EVO", peso: 6.5 },
 ];
 
-console.table("bikes:", bikes);
+console.table(bikes);
 
-for (let i = 0; i < bikes.length; i++) {
+let lighterBikeName = "Bianchi Oltre XR4";
+let lighterBikeWeight = 6.8;
+
+for (let i = 1; i < bikes.length; i++) {
   const currentBike = bikes[i];
-  console.log("currentBike:", currentBike);
+  console.log("currentBike.peso:", currentBike.peso);
 
-  if (currentBike.peso < bikes.peso) {
-    console.log(currentBike);
+  if (currentBike.peso < lighterBikeWeight) {
+    lighterBikeName = currentBike.nome;
+    lighterBikeWeight = currentBike.peso;
   }
 }
+
+console.log(
+  `La bici che pesa meno di tutte è ${lighterBikeName}, peso ${lighterBikeWeight} kg`,
+);
