@@ -22,15 +22,15 @@ console.table(teams);
 
 //  ?? Scrivo una funzione per generare numeri random per i falli subiti
 
-function generateRandomFouls(number) {
-  const randomFouls = Math.floor(Math.random() * 50) + 1;
+function generateRandomFouls() {
+  const randomFouls = Math.floor(Math.random() * 20) + 1;
   return randomFouls;
 }
 
 //  ?? Scrivo una funzione per generare numeri random per i punti fatti
 
-function generateRandomPoints(number) {
-  const randomPoints = Math.floor(Math.random() * 50) + 1;
+function generateRandomPoints() {
+  const randomPoints = Math.floor(Math.random() * 50) + 15;
   return randomPoints;
 }
 
@@ -42,3 +42,21 @@ for (let i = 0; i < teams.length; i++) {
   currentTeam.fouls = generateRandomFouls();
 }
 console.table(teams);
+
+// ?? Genero un nuovo array che contenga solamente nomi e falli
+
+const teamsCompressed = [];
+
+for (let i = 0; i < teams.length; i++) {
+  const currentTeam = teams[i];
+  console.log(currentTeam);
+
+  const newObject = {
+    name: currentTeam.name,
+    fouls: currentTeam.fouls,
+  };
+
+  teamsCompressed.push(newObject);
+}
+
+console.table(teamsCompressed);
