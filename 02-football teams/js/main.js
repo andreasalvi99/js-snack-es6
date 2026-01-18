@@ -29,19 +29,11 @@ const generateRandomFouls = () => Math.floor(Math.random() * 20) + 1;
 const generateRandomPoints = () => Math.floor(Math.random() * 50) + 15;
 
 // ?? Utilizzo le funzioni in un ciclo per assegnare a ogni squadra punti e falli
+const teamsCompressed = [];
 
 for (const team of teams) {
   team.points = generateRandomPoints();
   team.fouls = generateRandomFouls();
-}
-console.table(teams);
-
-// ?? Genero un nuovo array che contenga solamente nomi e falli
-
-const teamsCompressed = [];
-
-for (const team of teams) {
-  console.log(team);
 
   const newObject = {
     name: team.name,
@@ -50,5 +42,8 @@ for (const team of teams) {
 
   teamsCompressed.push(newObject);
 }
+console.table(teams);
+
+// ?? Genero un nuovo array che contenga solamente nomi e falli
 
 console.table(teamsCompressed);
